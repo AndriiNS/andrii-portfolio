@@ -1,3 +1,4 @@
+// #region hoverbtn
 const buttons = document.querySelectorAll(".andrii__info-btn");
 
 buttons.forEach((button) => {
@@ -16,6 +17,7 @@ buttons.forEach((button) => {
     button.classList.remove("hover");
   });
 });
+// #endregion
 //========================================================================================================================================================
 const container = document.querySelector(".skill__utils1");
 
@@ -24,6 +26,7 @@ for (let i = 0; i < 25; i++) {
   container.appendChild(dot);
 }
 //========================================================================================================================================================
+// #region gsapanimation images
 gsap.registerPlugin();
 
 const animateCircles = (selector) => {
@@ -73,7 +76,6 @@ const animateCircles = (selector) => {
 animateCircles(".skill__utils1 svg circle");
 animateCircles(".skill__utils3 svg circle");
 
-//========================================================================================================================================================
 gsap.registerPlugin(MotionPathPlugin);
 
 gsap.utils.toArray(".animated-svg path").forEach((path) => {
@@ -92,3 +94,4 @@ gsap.utils.toArray(".animated-svg path").forEach((path) => {
     yoyo: true
   });
 });
+// #endregion

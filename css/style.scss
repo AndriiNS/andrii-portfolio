@@ -1,4 +1,29 @@
 // 6.4px
+// #region scroll bar
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #282c33;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 1rem;
+  border: 0.2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #282c33;
+}
+// #endregion
 // #region reser
 html {
   font-size: 1.5625vw;
@@ -133,6 +158,8 @@ body {
 .header__link.active {
   color: #fff;
 }
+//========================================================================================================================================================
+//page home
 // #region header
 .social {
   position: fixed;
@@ -435,6 +462,7 @@ body {
 .projects {
   // .projects__content
   margin-bottom: 12rem;
+  position: relative;
   &__content {
     display: flex;
     flex-direction: column;
@@ -503,6 +531,8 @@ body {
   &__inner {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 2rem;
   }
 
   // .projects__project
@@ -698,6 +728,7 @@ body {
   &__content {
     display: flex;
     justify-content: space-between;
+    margin-top: 7rem;
   }
 
   // .about__text
@@ -853,17 +884,18 @@ body {
     color: #fff;
     font-size: 4rem;
     font-weight: 600;
+    text-align: center;
   }
 
   // .footer__media-box
 
   &__media-box {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
     align-items: center;
     a > img {
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
       transition: all 0.3s ease 0s;
       &:hover {
         scale: 1.1;
@@ -881,4 +913,122 @@ body {
   }
 }
 
+// #endregion
+//========================================================================================================================================================
+//page about
+// #region about-me
+.about-me {
+  // .about-me__title
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 8.5rem;
+    h2 {
+      font-size: 3.5rem;
+      color: #fff;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+// #endregion
+// #region fun
+.fun {
+  // .fun__title
+  position: relative;
+
+  &__title {
+    font-size: 3.5rem;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  // .fun__content
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    p {
+      font-size: 1.8rem;
+      padding: 1rem;
+      border: 1px solid #abb2bf;
+    }
+  }
+
+  // .fun__accordeon
+
+  &__accordeon {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  // .fun__accordeon-box
+
+  &__accordeon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    overflow: hidden;
+  }
+}
+
+.accordeon {
+  // .accordeon__btn
+
+  &__btn {
+    font-size: 3rem;
+  }
+  // .accorderon__text
+
+  &__text {
+    font-size: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+}
+.accordeon-bnt__box {
+  border: 1px solid #abb2bf;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease 0s;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  gap: 2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #212328;
+  }
+}
+.accordeon-span-purple {
+  color: #c778dd;
+  rotate: 90deg;
+}
+.accordeon-span {
+  transition: all 0.3s ease 0s;
+}
+// #endregion
+//========================================================================================================================================================
+// page projects
+// #region project
+.projects.page {
+  margin-top: 7.5rem;
+}
+.projects__title.page {
+  color: #fff;
+  &::after {
+    content: "";
+    display: none;
+  }
+}
 // #endregion
