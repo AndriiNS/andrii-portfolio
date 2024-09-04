@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!isOpen) {
         text.style.maxHeight = text.scrollHeight + "px";
-        span.classList.add("purple");
+        span.classList.add("accordeon-span-purple");
       }
     });
   });

@@ -839,4 +839,13 @@ body {
 .projects__title.page::after {
   content: "";
   display: none;
+}
+
+.projects__content.page {
+  margin-top: 10rem;
+}
+
+.projects__inner.project {
+  justify-content: start;
+  gap: 2rem;
 }/*# sourceMappingURL=style.css.map */
