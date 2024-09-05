@@ -140,6 +140,10 @@ legend {
   display: block;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Fira Code", monospace;
   background-color: #282c33;
@@ -168,6 +172,7 @@ body {
   left: 4.5rem;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  z-index: 10;
 }
 .social img {
   transition: scale 0.3s ease 0s;
@@ -234,6 +239,7 @@ body {
 }
 
 .andrii {
+  position: relative;
   margin-top: 6.8rem;
 }
 .andrii__content {
@@ -358,6 +364,9 @@ body {
 .smart {
   margin-top: 15rem;
   margin-bottom: 8rem;
+  opacity: 0; /* Спочатку невидимий */
+  transform: translateY(50px); /* Спочатку зсунуті вниз */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .smart__content {
   display: flex;
