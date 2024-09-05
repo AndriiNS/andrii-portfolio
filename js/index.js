@@ -1,23 +1,3 @@
-// #region hoverbtn
-const buttons = document.querySelectorAll(".andrii__info-btn");
-
-buttons.forEach((button) => {
-  button.addEventListener("mousemove", function (e) {
-    const rect = button.getBoundingClientRect();
-    const startX = e.clientX - rect.left;
-    const startY = e.clientY - rect.top;
-
-    button.style.setProperty("--x", `${startX}px`);
-    button.style.setProperty("--y", `${startY}px`);
-
-    button.classList.add("hover");
-  });
-
-  button.addEventListener("mouseleave", function () {
-    button.classList.remove("hover");
-  });
-});
-// #endregion
 //========================================================================================================================================================
 const container = document.querySelector(".skill__utils1");
 if (container) {
@@ -133,7 +113,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       },
       "<"
     )
-    .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 })
+    .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
     .from(".andrii__img-text", { opacity: 0, duration: 1 })
     .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
     .from(".header", { opacity: 0, y: -50, duration: 1 })
