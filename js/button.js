@@ -16,3 +16,18 @@ buttons.forEach((button) => {
     button.classList.remove("hover");
   });
 });
+//========================================================================================================================================================
+function mobileNav() {
+  // Mobile nav button
+  const navBtn = document.querySelector(".mobile-nav-btn");
+  const nav = document.querySelector(".header__menu-mobile");
+  const menuIcon = document.querySelector(".nav-icon");
+  const body = document.body;
+
+  navBtn.onclick = function () {
+    nav.classList.toggle("header__menu-mobile--open");
+    menuIcon.classList.toggle("nav-icon--active");
+    body.style.overflow = nav.classList.contains("header__menu-mobile--open") ? "hidden" : "";
+  };
+}
+mobileNav();
