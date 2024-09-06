@@ -84,7 +84,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
   const timeline = gsap.timeline();
 
   timeline
-    .set([".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn"], {
+    .set([".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"], {
       textAlign: "center",
       display: "flex",
       flexDirection: "column",
@@ -101,10 +101,10 @@ if (!sessionStorage.getItem("animationPlayed")) {
       },
       "+=0.5"
     )
-    .from(".andrii__info-btn", { opacity: 0, x: -50, duration: 1 }, "+=0.5")
+    .from(".andrii__info-btn.first", { opacity: 0, x: -50, duration: 1 }, "+=0.5")
     .to(".andrii", { left: "0%", duration: 1.5, ease: "power3.out" })
     .set(
-      [".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn"],
+      [".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"],
       {
         textAlign: "",
         display: "",
