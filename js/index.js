@@ -83,48 +83,83 @@ if (!sessionStorage.getItem("animationPlayed")) {
 
   const timeline = gsap.timeline();
 
-  timeline
-    .set([".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"], {
-      textAlign: "center",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    })
-    .set(".andrii", { left: "20%" })
-    .to(".andrii__info-title span", { text: { value: "I am a front-end developer" }, duration: 2, ease: "none" }) // Text appears without removing existing text
-    .to(
-      ".andrii__info-text",
-      {
-        text: { value: "I create modern, responsive websites that blend cutting-edge technology with innovative design" },
-        duration: 3,
-        ease: "none"
-      },
-      "+=0.5"
-    )
-    .from(".andrii__info-btn.first", { opacity: 0, x: -50, duration: 1 }, "+=0.5")
-    .to(".andrii", { left: "0%", duration: 1.5, ease: "power3.out" })
-    .set(
-      [".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"],
-      {
-        textAlign: "",
-        display: "",
-        flexDirection: "",
-        alignItems: ""
-      },
-      "<"
-    )
-    .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
-    .from(".andrii__img-text", { opacity: 0, duration: 1 })
-    .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
-    .from(".header", { opacity: 0, y: -50, duration: 1 })
-    .from(".social", { opacity: 0, x: -50, duration: 1 }, "<")
-    .from(".andrii__img-logo", { opacity: 0, duration: 1 })
-    .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
-
-    .add(() => {
-      document.body.style.overflow = "";
-      sessionStorage.setItem("animationPlayed", "true");
-    });
+  if (window.innerWidth >= 968) {
+    timeline
+      .set([".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"], {
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+      })
+      .set(".andrii", { left: "20%" })
+      .to(".andrii__info-title span", { text: { value: "I am a front-end developer" }, duration: 2, ease: "none" })
+      .to(
+        ".andrii__info-text",
+        {
+          text: { value: "I create modern, responsive websites that blend cutting-edge technology with innovative design" },
+          duration: 3,
+          ease: "none"
+        },
+        "+=0.5"
+      )
+      .from(".andrii__info-btn.first", { opacity: 0, x: -50, duration: 1 }, "+=0.5")
+      .to(".andrii", { left: "0%", duration: 1.5, ease: "power3.out" })
+      .set(
+        [".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"],
+        {
+          textAlign: "",
+          display: "",
+          flexDirection: "",
+          alignItems: ""
+        },
+        "<"
+      )
+      .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
+      .from(".andrii__img-text", { opacity: 0, duration: 1 })
+      .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
+      .from(".header", { opacity: 0, y: -50, duration: 1 })
+      .from(".social", { opacity: 0, x: -50, duration: 1 }, "<")
+      .from(".andrii__img-logo", { opacity: 0, duration: 1 })
+      .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
+      .add(() => {
+        document.body.style.overflow = "";
+        sessionStorage.setItem("animationPlayed", "true");
+      });
+  } else {
+    timeline
+      .to(".andrii__info-title span", { text: { value: "I am a front-end developer" }, duration: 2, ease: "none" })
+      .to(
+        ".andrii__info-text",
+        {
+          text: { value: "I create modern, responsive websites that blend cutting-edge technology with innovative design" },
+          duration: 3,
+          ease: "none"
+        },
+        "+=0.5"
+      )
+      .from(".andrii__info-btn.first", { opacity: 0, x: -50, duration: 1 }, "+=0.5")
+      .to(".andrii", { left: "0%", duration: 1.5, ease: "power3.out" })
+      .set(
+        [".andrii__info-title", ".andrii__info", ".andrii__info-text", ".andrii__info-btn.first"],
+        {
+          textAlign: "",
+          display: "",
+          flexDirection: "",
+          alignItems: ""
+        },
+        "<"
+      )
+      .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
+      .from(".andrii__img-text", { opacity: 0, duration: 1 })
+      .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
+      .from(".header", { opacity: 0, y: -50, duration: 1 })
+      .from(".andrii__img-logo", { opacity: 0, duration: 1 })
+      .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
+      .add(() => {
+        document.body.style.overflow = "";
+        sessionStorage.setItem("animationPlayed", "true");
+      });
+  }
 } else {
   document.body.style.overflow = "";
   const textDescr = document.querySelector(".andrii__img-descr");
@@ -171,32 +206,61 @@ gsap.from(".projects__project", {
 });
 // #endregion
 // #region skills
-gsap.from(".skill-box", {
-  scrollTrigger: {
-    trigger: ".skill__inner-box",
-    start: "top 70%",
-    end: "bottom top",
-    scrub: false,
-    markers: false
-  },
-  opacity: 0,
-  x: 50,
-  stagger: {
-    amount: 0.5,
-    start: 0.5,
-    from: "end",
+if (window.innerWidth >= 968) {
+  gsap.from(".skill-box", {
+    scrollTrigger: {
+      trigger: ".skill__inner-box",
+      start: "top 70%",
+      end: "bottom top",
+      scrub: false,
+      markers: false
+    },
+    opacity: 0,
+    x: 50,
     stagger: {
       amount: 0.5,
       start: 0.5,
-      from: "end"
+      from: "end",
+      stagger: {
+        amount: 0.5,
+        start: 0.5,
+        from: "end"
+      }
+    },
+    duration: 1,
+    delay: (index) => {
+      const delays = [0, 0.5, 1, 1.5, 2];
+      return delays[index] || 0;
     }
-  },
-  duration: 1,
-  delay: (index) => {
-    const delays = [0, 0.5, 1, 1.5, 2];
-    return delays[index] || 0;
-  }
-});
+  });
+} else {
+  gsap.from(".skill-box", {
+    scrollTrigger: {
+      trigger: ".skill__inner-box",
+      start: "top 70%",
+      end: "bottom top",
+      scrub: false,
+      markers: false
+    },
+    opacity: 0,
+    y: 50,
+    stagger: {
+      amount: 0.5,
+      start: 0.5,
+      from: "end",
+      stagger: {
+        amount: 0.5,
+        start: 0.5,
+        from: "end"
+      }
+    },
+    duration: 1,
+    delay: (index) => {
+      const delays = [0, 0.5, 1, 1.5, 2];
+      return delays[index] || 0;
+    }
+  });
+}
 
 // #endregion
 // #region about
