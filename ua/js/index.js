@@ -22,7 +22,7 @@ choices.forEach((choice) => {
     const selectedLang = this.textContent;
     document.querySelector(".header__change-choise").textContent = selectedLang;
     langSwitcher.classList.remove("active");
-    window.location = "./ua/index.html";
+    window.location = "./../index.html";
   });
 });
 //========================================================================================================================================================
@@ -128,11 +128,11 @@ if (!sessionStorage.getItem("animationPlayed")) {
         alignItems: "center"
       })
       .set(".andrii", { left: "20%" })
-      .to(".andrii__info-title span", { text: { value: "I am a front-end developer" }, duration: 2, ease: "none" })
+      .to(".andrii__info-title span", { text: { value: "Я front-end developer" }, duration: 2, ease: "none" })
       .to(
         ".andrii__info-text",
         {
-          text: { value: "I create modern, responsive websites that blend cutting-edge technology with innovative design" },
+          text: { value: "Я створюю сучасні, адаптивні веб-сайти, які поєднують передові технології з інноваційним дизайном" },
           duration: 3,
           ease: "none"
         },
@@ -152,7 +152,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       )
       .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
       .from(".andrii__img-text", { opacity: 0, duration: 1 })
-      .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
+      .to(".andrii__img-descr", { text: { value: "Відкритий для цікавих пропозицій" }, duration: 1.5, ease: "none" })
       .from(".header", { opacity: 0, y: -50, duration: 1 })
       .from(".social", { opacity: 0, x: -50, duration: 1 }, "<")
       .from(".andrii__img-logo", { opacity: 0, duration: 1 })
@@ -163,11 +163,11 @@ if (!sessionStorage.getItem("animationPlayed")) {
       });
   } else {
     timeline
-      .to(".andrii__info-title span", { text: { value: "I am a front-end developer" }, duration: 2, ease: "none" })
+      .to(".andrii__info-title span", { text: { value: "Я front-end developer" }, duration: 2, ease: "none" })
       .to(
         ".andrii__info-text",
         {
-          text: { value: "I create modern, responsive websites that blend cutting-edge technology with innovative design" },
+          text: { value: "Я створюю сучасні, адаптивні веб-сайти, які поєднують передові технології з інноваційним дизайном" },
           duration: 3,
           ease: "none"
         },
@@ -187,7 +187,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       )
       .from(".andrii__img-me", { opacity: 0, x: 100, duration: 1 }, "<")
       .from(".andrii__img-text", { opacity: 0, duration: 1 })
-      .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
+      .to(".andrii__img-descr", { text: { value: "Відкритий для цікавих пропозицій" }, duration: 1.5, ease: "none" })
       .from(".header", { opacity: 0, duration: 1 })
       .from(".andrii__img-logo", { opacity: 0, duration: 1 })
       .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
@@ -201,9 +201,9 @@ if (!sessionStorage.getItem("animationPlayed")) {
   const textDescr = document.querySelector(".andrii__img-descr");
   const textInfo = document.querySelector(".andrii__info-text");
   const textSpan = document.querySelector(".andrii__info-title span");
-  textDescr.textContent = "Always open to interesting offers";
-  textInfo.textContent = "I create modern, responsive websites that blend cutting-edge technology with innovative design";
-  textSpan.textContent = "I am a front-end developer";
+  textDescr.textContent = "Відкритий для цікавих пропозицій";
+  textInfo.textContent = "Я створюю сучасні, адаптивні веб-сайти, які поєднують передові технології з інноваційним дизайном";
+  textSpan.textContent = "Я front-end developer";
 }
 // #endregion
 // #region smart

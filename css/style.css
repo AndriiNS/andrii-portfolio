@@ -931,6 +931,57 @@ body {
   display: none;
 }
 
+.header__change-lenguage {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  top: 4.7rem;
+  right: 13rem;
+}
+.header__change-lenguage::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  top: 0.7rem;
+  position: absolute;
+  background-image: url(./../img/icons/change-language-arrow.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease 0s;
+}
+.header__change-lenguage:hover::after {
+  content: "";
+  rotate: 180deg;
+}
+
+.header__change-lenguage:hover .header__change-other {
+  display: block;
+  border: 1px solid #abb2bf;
+}
+
+.header__change-choise {
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #abb2bf;
+}
+
+.header__change-other {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  border-radius: 5px;
+}
+
+.header__change-other span {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
 .header__link-mobile.active {
   color: #fff;
 }
@@ -940,6 +991,19 @@ body {
 }
 
 @media (max-width: 968px) {
+  .header__change-lenguage.for-pc {
+    display: none;
+  }
+  .header__change-lenguage {
+    top: 3rem;
+    left: 4rem;
+  }
+  .header__change-lenguage::after {
+    content: "";
+    top: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   .mobile-nav-btn {
     display: block;
   }
@@ -948,6 +1012,15 @@ body {
   }
   .header__menu {
     display: none;
+  }
+  .header__change-lenguage:hover .header__change-other {
+    display: block;
+  }
+  .header__change-lenguage.active .header__change-other {
+    display: block;
+  }
+  .header__change-choise {
+    font-size: 3rem;
   }
   .header__menu-mobile {
     display: flex;
@@ -959,11 +1032,11 @@ body {
     height: 100%;
     left: 0;
     right: 0;
-    top: -120%;
+    top: -150%;
     bottom: 0;
     background-color: #282c33;
     z-index: 10;
-    transition: all 0.3s ease 0s;
+    transition: all 1s ease 0s;
   }
   .header__logo-text {
     font-size: 3rem;
