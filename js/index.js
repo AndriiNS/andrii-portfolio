@@ -154,6 +154,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       .from(".andrii__img-text", { opacity: 0, duration: 1 })
       .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
       .from(".header", { opacity: 0, y: -50, duration: 1 })
+      .from(".header__change-lenguage.for-pc", { opacity: 0, x: -50, duration: 1 }, "<")
       .from(".social", { opacity: 0, x: -50, duration: 1 }, "<")
       .from(".andrii__img-logo", { opacity: 0, duration: 1 })
       .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
@@ -189,6 +190,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       .from(".andrii__img-text", { opacity: 0, duration: 1 })
       .to(".andrii__img-descr", { text: { value: "Always open to interesting offers" }, duration: 1.5, ease: "none" })
       .from(".header", { opacity: 0, duration: 1 })
+      .from(".header__change-lenguage.for-pc", { opacity: 0, duration: 1 }, "<")
       .from(".andrii__img-logo", { opacity: 0, duration: 1 })
       .from(".andrii__img-dots", { opacity: 0, duration: 1 }, "<")
       .add(() => {
