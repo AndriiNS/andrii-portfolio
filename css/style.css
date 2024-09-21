@@ -112,7 +112,7 @@ input::-ms-clear {
 }
 
 button,
-input[type=submit] {
+input[type="submit"] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -667,7 +667,7 @@ body {
   flex-wrap: wrap;
   row-gap: 1rem;
   -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  column-gap: 2rem;
 }
 .skill-box__skills {
   font-size: 2rem;
@@ -937,6 +937,7 @@ body {
   cursor: pointer;
   top: 4.7rem;
   right: 13rem;
+  z-index: 1000;
 }
 .header__change-lenguage::after {
   content: "";
@@ -1217,4 +1218,4 @@ body {
     justify-content: center;
     align-items: center;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
