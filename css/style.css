@@ -681,6 +681,7 @@ body {
 }
 .projects__project {
   max-width: 44.7rem;
+  width: 100%;
   border: 1px solid #abb2bf;
 }
 
